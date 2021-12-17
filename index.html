@@ -148,7 +148,7 @@
         <img class="hourglass" src="time.png"> 
         距离返校时间还剩：0天 <span class="hr"></span>:<span class="min"></span>:<span class="sec"></span>
     </div>
-    <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=155x155&data=1201920689&color=221-105-234"></img></div>
+    <div class="qr"><img id="purpleCode" src=""></img></div>
     <p>请向校方检查人员出示二维码，扫码进出校～</p>
 
     <script>
@@ -171,8 +171,7 @@
         var hr = document.querySelector('.hr');
         var min = document.querySelector('.min');
         var sec = document.querySelector('.sec');
-
-
+        document.getElementById("purpleCode").src = "https://api.qrserver.com/v1/create-qr-code/?size=155x155&data="+ id +"&color=221-105-234";
 
         function countDown() {
             var nowTime = new Date();
